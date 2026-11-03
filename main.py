@@ -1,11 +1,15 @@
 word = "python"
-guessed = [] 
-guess = input("Guess a letter: ").lower() # NEW
-guessed.append(guess) 
-display = ""
-for letter in word:
-    if letter in guessed: 
+guessed = []
+while True: 
+ display = ""
+ for letter in word:
+    if letter in guessed:
      display = display + letter + " "
-    else: 
+    else:
      display = display + "_ "
-    print(display)  
+ print(display)
+ if "_" not in display: 
+    print("You found it!")
+    break 
+ guess = input("Guess a letter: ").lower()
+ guessed.append(guess)
